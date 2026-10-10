@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Фото пока нет">
+<rect width="800" height="600" fill="#eef1f4"/>
+<g fill="none" stroke="#b6bec8" stroke-width="10" stroke-linejoin="round">
+<rect x="290" y="210" width="220" height="160" rx="18"/><circle cx="400" cy="290" r="45"/>
+<path d="M350 210l20-30h60l20 30"/></g>
+<text x="400" y="440" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" fill="#7a8592">[ПРИШЛИТЕ: фото]</text>
+</svg>
