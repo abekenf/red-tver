@@ -61,6 +61,23 @@ img { max-width: 100%; display: block; }
 }
 .topbar__inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
 .topbar__name { font-weight: 800; color: var(--ink); text-decoration: none; font-size: 19px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.topbar__nav { display: flex; gap: 22px; margin-left: auto; font-size: 16px; font-weight: 600; }
+.topbar__nav a { color: var(--muted); text-decoration: none; }
+.topbar__nav a:hover { color: var(--accent); }
+
+/* Полоса доверия под первым экраном: только факты из данных */
+.trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg); }
+.trust__inner { display: flex; flex-wrap: wrap; gap: 12px 40px; padding-top: 20px; padding-bottom: 20px; }
+.trust__item { display: flex; align-items: baseline; gap: 10px; }
+.trust__value { font-size: 28px; font-weight: 800; color: var(--accent); line-height: 1; }
+.trust__label { color: var(--muted); }
+
+/* Финальный призыв перед контактами */
+.cta { padding: 56px 0; background: var(--ink); color: #fff; }
+.cta__inner { display: grid; gap: 22px; justify-items: start; }
+.cta__title { margin: 0; font-size: clamp(26px, 4vw, 38px); max-width: 22ch; }
+.cta .btn--ghost { color: #fff; border-color: #fff; }
+.block__cta { margin-top: 24px; }
 
 /* Первый экран */
 .hero { padding: 72px 0 64px; background: linear-gradient(160deg, #eaf2ff 0%, #ffffff 70%); }
@@ -131,4 +148,72 @@ img { max-width: 100%; display: block; }
   .contacts__list dd { margin-bottom: 10px; }
   .map { height: 300px; }
   .topbar__inner { min-height: 56px; }
+  .topbar__nav { display: none; }
+  .trust__inner { gap: 10px 24px; }
+  .cta { padding: 44px 0; }
 }
+
+/* Закреплённая кнопка звонка на телефоне (правка «для всех» от 2026-10-10) */
+.callbar { display: none; }
+@media (max-width: 760px) {
+  .callbar { display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; }
+  .callbar .btn { display: block; width: 100%; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+  body { padding-bottom: 84px; }
+}
+
+/* Общее для вариантов: строка пояснения на первом экране */
+.hero__lead { margin: 0 0 22px; font-size: 20px; max-width: 34ch; }
+.hero__hl { display: inline; }
+.callbar .btn { display: flex; align-items: center; justify-content: center; }
+@media (max-width: 760px) { .hero__kind::before, .hero__kind::after { display: none; } }
+
+/* Стиль по REF-038 LaunchDarkly (screens_references_claude, стиль-гайд refs/REF-038-launchdarkly-style-guide.md):
+   угольный фон #0E0E0E, плавающее меню-таблетка #191919, заголовок 500 с межстрочным 1.0 и второй строкой цветом,
+   метки капсом с разрядкой, лаймовая кнопка #DDFF46 (новая версия сайта), всё скруглено таблетками, свечение вместо теней. */
+:root { --ink: #FFFFFF; --muted: #D1D3D4; --bg: #0E0E0E; --tint: #141414; --line: rgba(255,255,255,.08);
+        --accent: #DDFF46; --accent-ink: #0E0E0E; --radius: 24px; }
+body { background: var(--bg); color: var(--ink); }
+.topbar { position: sticky; top: 12px; margin: 12px 16px 0; background: #191919; border: 1px solid var(--line); border-radius: 60px; }
+.topbar__inner { min-height: 58px; padding-left: 22px; padding-right: 8px; }
+.topbar__name { color: #fff; font-weight: 600; }
+.topbar__nav a { color: var(--muted); font-weight: 500; }
+.btn--small { border-radius: 30px; }
+.hero { padding: 110px 0 96px; text-align: center;
+  background:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--bg); }
+.hero .wrap { display: grid; justify-items: center; }
+.hero__kind { font-size: 13px; letter-spacing: .15em; color: var(--muted); font-weight: 500; }
+.hero__title { font-weight: 600; letter-spacing: -.02em; line-height: 1.02; font-size: clamp(40px, 8vw, 96px); max-width: 14ch; }
+.hero__hl { display: block; color: var(--accent); }
+.hero__lead { color: var(--muted); margin-left: auto; margin-right: auto; }
+.hero__facts { justify-items: center; color: var(--muted); }
+.ico { color: var(--accent); }
+.hero__actions { justify-content: center; padding: 8px; border-radius: 40px; background: #191919; border: 1px solid var(--line);
+  box-shadow: 0 0 40px rgba(221,255,70,.12); }
+.btn { border-radius: 30px; font-weight: 600; }
+.btn--main { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn--ghost { color: #fff; border: 1px solid rgba(255,255,255,.25); }
+.block__cta { display: inline-flex; }
+.trust { background: var(--bg); border-color: var(--line); }
+.trust__inner { justify-content: center; }
+.trust__value { color: #fff; font-weight: 600; }
+.trust__label { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .13em; }
+.block--tint { background: var(--tint); }
+h2 { font-weight: 600; letter-spacing: -.02em; color: #fff; }
+.prices { background: #191919; border: 1px solid var(--line); border-radius: var(--radius); padding: 8px 28px; }
+.prices__row { border-bottom-color: var(--line); }
+.prices__row:last-child { border-bottom: 0; }
+.prices__dots { border-bottom-color: rgba(255,255,255,.12); }
+.prices__value { color: var(--accent); }
+.fact, .review, .booking { background: #191919; border: 1px solid var(--line); border-radius: var(--radius); }
+.review blockquote { font-size: 18px; color: #fff; }
+.review figcaption, .contacts__list dt { color: #9a9c9e; }
+.cta { background: var(--bg); border-top: 1px solid var(--line); }
+.cta__inner { justify-items: center; text-align: center; }
+.cta .btn--ghost { color: #fff; border-color: rgba(255,255,255,.25); }
+.footer { background: #090909; color: #9a9c9e; border-top: 1px solid var(--line); }
+a { color: var(--accent); }
+.map { filter: invert(.92) hue-rotate(180deg) saturate(.4); }
+@media (max-width: 760px) { .topbar { margin: 8px 8px 0; } .hero__actions { width: 100%; } }

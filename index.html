@@ -7,11 +7,19 @@
 <title>Рэд</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="ref-REF-038">
+
+<!-- Структура «сайт-визитка» (build-site/SKILL.md → «Структура страницы»):
+     меню → первый экран → полоса доверия → услуги → почему мы → отзывы → фото → о компании → финальный призыв → контакты и карта → подвал -->
 
 <header class="topbar" data-section="header">
   <div class="wrap topbar__inner">
     <a class="topbar__name" href="#top">Рэд</a>
+    <nav class="topbar__nav" aria-label="Разделы">
+      <a href="#services">Услуги</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
     <a class="btn btn--small" href="tel:+79301694766">+7 (930) 169-47-66</a>
   </div>
 </header>
@@ -20,8 +28,9 @@
 
 <section class="hero" data-section="hero">
   <div class="wrap">
-    <p class="hero__kind">Шиномонтаж</p>
-    <h1 class="hero__title">Рэд</h1>
+    <p class="hero__kind">Тверь · ★ 5,0 · 69 отзывов на Яндекс Картах</p>
+    <h1 class="hero__title">Шиномонтаж «Рэд» <span class="hero__hl">в&nbsp;Твери</span></h1>
+    <p class="hero__lead">Балансировка, ремонт шин и дошиповка. Ежедневно с 9 до 21.</p>
     <ul class="hero__facts">
       <li><span class="ico" aria-hidden="true">&#9679;</span>Тверь, ул. 15 лет Октября, 50/1</li>
       <li><span class="ico" aria-hidden="true">&#9719;</span>ежедневно 09:00–21:00</li>
@@ -33,7 +42,17 @@
   </div>
 </section>
 
-<section class="block" data-section="services">
+<section class="trust" data-section="trust" aria-label="Коротко о нас в цифрах">
+  <div class="wrap trust__inner">
+    
+    <div class="trust__item"><span class="trust__value">5,0</span><span class="trust__label">рейтинг на Яндекс Картах</span></div>
+    
+    <div class="trust__item"><span class="trust__value">69</span><span class="trust__label">отзывов клиентов</span></div>
+    
+  </div>
+</section>
+
+<section class="block" data-section="services" id="services">
   <div class="wrap">
     <h2>Услуги и цены</h2>
     <ul class="prices">
@@ -45,6 +64,7 @@
       <li class="prices__row"><span class="prices__name">Дошиповка (1 шт.)</span><span class="prices__dots" aria-hidden="true"></span><span class="prices__value">20 ₽</span></li>
       
     </ul>
+    <div class="hero__actions block__cta"><a class="btn btn--main" href="tel:+79301694766">Позвонить</a></div>
   </div>
 </section>
 
@@ -52,17 +72,12 @@
   <div class="wrap">
     <h2>Почему мы</h2>
     <div class="facts">
-      
-      <div class="fact"><span class="fact__value">5,0</span><span class="fact__label">рейтинг на Яндекс Картах</span></div>
-      
-      <div class="fact"><span class="fact__value">69</span><span class="fact__label">отзывов клиентов</span></div>
-      
+      <div class="fact"><span class="ph">[ПРИШЛИТЕ: 3–4 причины выбрать вас: опыт, гарантии, сроки]</span></div>
     </div>
-    <div class="about" data-section="about"><p><span class="ph">[ПРИШЛИТЕ: пару слов о себе: с какого года работаете, чем отличаетесь]</span></p></div>
   </div>
 </section>
 
-<section class="block" data-section="reviews">
+<section class="block" data-section="reviews" id="reviews">
   <div class="wrap">
     <h2>Отзывы клиентов</h2>
     <div class="reviews">
@@ -97,7 +112,21 @@
   </div>
 </section>
 
-<section class="block" data-section="contacts">
+<section class="block" data-section="about">
+  <div class="wrap">
+    <h2>О нас</h2>
+    <div class="about"><p><span class="ph">[ПРИШЛИТЕ: пару слов о себе: с какого года работаете, чем отличаетесь]</span></p></div>
+  </div>
+</section>
+
+<section class="cta" data-section="cta">
+  <div class="wrap cta__inner">
+    <h2 class="cta__title">Позвоните или напишите — ответим на вопросы</h2>
+    <div class="hero__actions"><a class="btn btn--main" href="tel:+79301694766">Позвонить</a> <a class="btn btn--ghost" href="https://wa.me/79301694766">Написать в WhatsApp</a></div>
+  </div>
+</section>
+
+<section class="block" data-section="contacts" id="contacts">
   <div class="wrap contacts">
     <div>
       <h2>Часы и контакты</h2>
@@ -124,9 +153,12 @@
 <footer class="footer" data-section="footer">
   <div class="wrap">
     <p class="footer__name">Рэд</p>
+    <p>Тверь, ул. 15 лет Октября, 50/1</p>
     <p class="footer__demo">Демо-версия, подготовлена как предложение для владельца</p>
   </div>
 </footer>
+
+<div class="callbar" data-section="callbar"><a class="btn btn--main" href="tel:+79301694766">Позвонить</a></div>
 
 </body>
 </html>
